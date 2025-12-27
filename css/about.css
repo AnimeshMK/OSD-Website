@@ -1,0 +1,101 @@
+/* ================= ABOUT PAGE ================= */
+
+.about-page {
+  min-height: 100vh;
+  padding: 120px 80px 80px;
+  transition: margin-left 0.35s ease;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+.about-header h1 {
+  font-size: 42px;
+  letter-spacing: 4px;
+  color: #ff2b2b;
+  margin-bottom: 14px;
+}
+
+.about-header p {
+  max-width: 720px;
+  opacity: 0.75;
+  line-height: 1.7;
+}
+
+/* Content blocks */
+.about-block {
+  margin-top: 60px;
+  padding: 36px 40px;
+  border: 1px solid rgba(255, 43, 43, 0.25);
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 30px rgba(255, 43, 43, 0.15);
+}
+
+.about-block h2 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #ff2b2b;
+  margin-bottom: 14px;
+}
+
+.about-block p {
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* List */
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.about-list li {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  opacity: 0.9;
+}
+
+.about-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #ff2b2b;
+}
+
+/* Quote */
+.about-quote {
+  font-style: italic;
+  font-size: 18px;
+  opacity: 0.85;
+  border-left: 3px solid rgba(255, 43, 43, 0.6);
+  padding-left: 16px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 100px 24px 60px;
+  }
+
+  .about-header h1 {
+    font-size: 32px;
+  }
+
+  .about-block {
+    padding: 28px 24px;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.4;
+  padding: 40px 0;
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry — OffSecDiary</title>
+
+  <!-- Base + Page CSS -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/enquiry.css" />
+  <link rel="stylesheet" href="../css/auth-panel.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar collapsed" id="sidebar">
+
+  <div class="sidebar-toggle" id="sidebarToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="home.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="enquiry.html" class="active">Enquiry</a>
+    <a href="about.html">About</a>
+  </nav>
+
+</aside>
+
+<!-- ================= SYSTEM HEADER ================= -->
+<header class="system-header">
+  <div class="system-left">
+    <img src="../assets/bootlogo.png" class="system-logo" alt="OffSecDiary" />
+    <span class="system-name">OFFSECDIARY</span>
+  </div>
+
+  <div class="system-right">
+    <div class="sys-item">
+      <span class="sys-label">SYSTEM</span>
+      <span class="sys-value online">OPERATIONAL</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">UPTIME</span>
+      <span class="sys-value sys-uptime" id="sys-uptime">00:00:00</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">THREAT</span>
+      <span class="sys-value threat-low">LOW</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ENQUIRY PAGE ================= -->
+<section class="enquiry-section">
+
+  <div class="enquiry-container">
+
+    <div class="enquiry-header reveal">
+      <h1>ENQUIRY</h1>
+      <p>
+        Reach out for collaborations, research discussions, training inquiries,
+        or security-related engagements.
+      </p>
+    </div>
+
+    <!-- ================= CONTACT CHANNELS CARD ================= -->
+    <div class="enquiry-card reveal">
+
+      <h2>Contact Channels</h2>
+
+      <p class="enquiry-text">
+        Official communication points for OffSecDiary. Please use the appropriate
+        channel depending on your requirement.
+      </p>
+
+      <div class="enquiry-meta">
+
+        <div>
+          <span class="label">WHATSAPP</span>
+          <span class="value">
+            <a href="https://wa.me/918871440062" target="_blank">+91 8871440062</a>,
+            <a href="https://wa.me/919667493039" target="_blank">+91 9667493039</a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">INSTAGRAM</span>
+          <span class="value">
+            <a href="https://www.instagram.com/offsecdiary" target="_blank">
+              https://www.instagram.com/offsecdiary
+            </a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">LINKEDIN</span>
+          <span class="value">
+            <a href="https://www.linkedin.com/company/offsecdiary/" target="_blank">
+              https://www.linkedin.com/company/offsecdiary/
+            </a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">X (TWITTER)</span>
+          <span class="value">
+            <a href="https://x.com/OffSecDiary" target="_blank">
+              https://x.com/OffSecDiary
+            </a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">FACEBOOK</span>
+          <span class="value">
+            <a href="https://www.facebook.com/share/1BFWxgT9fg/" target="_blank">
+              https://www.facebook.com/share/1BFWxgT9fg/
+            </a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">EMAIL</span>
+          <span class="value">
+            <a href="mailto:offsecdiary@gmail.com">
+              offsecdiary@gmail.com
+            </a>
+          </span>
+        </div>
+
+        <div>
+          <span class="label">SUPPORT</span>
+          <span class="value">
+            <a href="mailto:support@offsecdiary.com">
+              support@offsecdiary.com
+            </a>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="enquiry-note">
+        For official or sensitive matters, prefer email or the enquiry form below.
+      </div>
+
+    </div>
+
+    <!-- ================= ENQUIRY FORM CARD ================= -->
+    <div class="enquiry-card reveal">
+
+      <h2>Submit an Enquiry</h2>
+
+      <p class="enquiry-text">
+        Provide your details below. This form will later be connected to secure
+        backend processing. For now, fields are placeholders only.
+      </p>
+
+      <form class="enquiry-form" id="enquiryForm">
+
+        <!-- ================= USER INPUT FIELDS ================= -->
+        <!-- Honeypot field (bot trap, invisible to users) -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="form-group">
+          <label>FULL NAME</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>EMAIL ADDRESS</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>SUBJECT</label>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Purpose of your enquiry"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>MESSAGE / QUERY</label>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Describe your query in detail"
+            required
+          ></textarea>
+        </div>
+
+        <!-- ================= HIDDEN AUTO-COLLECTED FIELDS ================= -->
+
+        <!-- Timestamp -->
+        <input type="hidden" name="timestamp" id="timestamp" />
+
+        <!-- Client metadata -->
+        <input type="hidden" name="timezone" id="timezone" />
+        <input type="hidden" name="page_url" id="page_url" />
+        <input type="hidden" name="user_agent" id="user_agent" />
+        <input type="hidden" name="referrer" id="referrer" />
+
+        <!-- Filled on backend later -->
+        <input type="hidden" name="ip_address" value="AUTO_FROM_APPS_SCRIPT" />
+
+        <!-- Source identifier -->
+        <input type="hidden" name="source" value="enquiry_page" />
+
+        <button type="submit" class="enquiry-submit">
+          Initiate Transmission
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  © 2025 OffSecDiary — Offensive Security Intelligence
+</footer>
+
+<div id="auth-root"></div>
+
+<script>
+fetch("../partials/auth-modal.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("auth-root").innerHTML = html;
+  });
+</script>
+
+<script>
+// Populate hidden fields with metadata
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('timestamp').value = new Date().toISOString();
+  document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  document.getElementById('page_url').value = window.location.href;
+  document.getElementById('user_agent').value = navigator.userAgent;
+  document.getElementById('referrer').value = document.referrer;
+});
+
+// Handle form submission
+const URL = "https://script.google.com/macros/s/AKfycbxeVx5AwvyL0JSRnfuoQgg0ciI1yf5kRp3pqa7ZgQs5phc4XCTOHm8nE5mSt8rt-98K/exec";
+
+document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  fetch(URL, {
+    method: "POST",
+    body: new FormData(this)
+  })
+  .then(() => {
+    alert("Enquiry submitted successfully!");
+    this.reset(); // Clear the form
+  })
+  .catch(() => {
+    alert("Error submitting enquiry. Please try again.");
+  });
+});
+</script>
+
+<script src="../js/layout.js"></script>
+<script src="../js/uptime.js"></script>
+<script src="../js/auth-panel.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure System Boot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <!-- BOOT CSS -->
+  <link rel="stylesheet" href="../css/boot.css" />
+</head>
+<body>
+
+<div id="boot-screen">
+
+  <!-- TELEMETRY -->
+  <div class="telemetry">
+    CPU TEMP: <span id="cpu">--</span>°C<br>
+    MEMORY: <span id="mem">--</span>%<br>
+    LATENCY: <span id="lat">--</span>ms
+  </div>
+
+  <!-- LEFT DIAGNOSTICS -->
+  <div class="diagnostic left">
+    <div>SECURE BOOT <span>[ OK ]</span></div>
+    <div>CRYPTO ENGINE <span>[ OK ]</span></div>
+    <div>SANDBOX <span>[ OK ]</span></div>
+  </div>
+
+  <!-- CORE -->
+  <div class="core">
+    <svg class="progress-ring" width="260" height="260">
+      <circle class="progress-ring-circle" r="120" cx="130" cy="130"/>
+    </svg>
+
+    <div class="hud-ring"></div>
+
+    <div class="core-text">
+      <div class="title">AI CORE</div>
+      <div class="subtitle" id="phase-text">INITIALIZING</div>
+      <div class="percent" id="progress-text">0%</div>
+    </div>
+  </div>
+
+  <!-- RIGHT DIAGNOSTICS -->
+  <div class="diagnostic right">
+    <div>FIREWALL <span>[ ACTIVE ]</span></div>
+    <div>INTRUSION AI <span>[ LIVE ]</span></div>
+    <div>UPLINK <span>[ SECURE ]</span></div>
+  </div>
+
+  <!-- STATUS -->
+  <div class="status-line" id="status-line"></div>
+
+</div>
+
+<script>
+/* ---------- ADAPTIVE SPEED ---------- */
+const cores = navigator.hardwareConcurrency || 4;
+const speedFactor = Math.max(0.7, Math.min(1.3, cores / 8));
+const typeSpeed = 40 / speedFactor;
+
+/* ---------- BOOT PHASES ---------- */
+const phases = [
+  { text: "BIOMETRIC SCAN INITIATED", progress: 10 },
+  { text: "BIOMETRIC HASH VERIFIED", progress: 25 },
+  { text: "LOADING NEURAL MODELS", progress: 45 },
+  { text: "INTEGRITY VERIFICATION: HEARTKING", progress: 60 },
+  { text: "SYSTEM INTEGRITY VERIFIED", progress: 80 },
+  { text: "SYSTEM ARCHITECT: A.M.K.", progress: 90 }
+];
+
+let phaseIndex = 0;
+let charIndex = 0;
+
+const statusLine = document.getElementById("status-line");
+const phaseText = document.getElementById("phase-text");
+const progressText = document.getElementById("progress-text");
+
+/* ---------- PROGRESS RING ---------- */
+const circle = document.querySelector(".progress-ring-circle");
+const radius = 120;
+const circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = circumference;
+
+function setProgress(p) {
+  circle.style.strokeDashoffset = circumference - (p / 100) * circumference;
+  progressText.textContent = p + "%";
+}
+
+/* ---------- TYPEWRITER ---------- */
+function typePhase() {
+  if (phaseIndex >= phases.length) {
+    finalizeBoot();
+    return;
+  }
+
+  const phase = phases[phaseIndex];
+  phaseText.textContent = "PROCESSING";
+
+  if (charIndex < phase.text.length) {
+    statusLine.classList.add("visible");
+    statusLine.textContent += phase.text[charIndex++];
+    setTimeout(typePhase, typeSpeed);
+  } else {
+    statusLine.classList.remove("visible");
+
+    setTimeout(() => {
+      statusLine.textContent = "";
+      charIndex = 0;
+      setProgress(phase.progress);
+      phaseIndex++;
+      typePhase();
+    }, 400);
+  }
+}
+
+/* ---------- TELEMETRY ---------- */
+setInterval(() => {
+  document.getElementById("cpu").textContent = (40 + Math.random() * 5).toFixed(1);
+  document.getElementById("mem").textContent = Math.floor(55 + Math.random() * 10);
+  document.getElementById("lat").textContent = Math.floor(8 + Math.random() * 6);
+}, 900);
+
+/* ---------- FINALIZE & REDIRECT ---------- */
+function finalizeBoot() {
+  phaseText.textContent = "ACCESS GRANTED";
+  setProgress(100);
+  statusLine.textContent = "STATUS: SECURE";
+
+  setTimeout(() => {
+    document.getElementById("boot-screen").classList.add("fade-out");
+  }, 600);
+
+  setTimeout(() => {
+    document.getElementById("welcome-screen").classList.add("active");
+  }, 1200);
+
+  setTimeout(() => {
+    document.getElementById("welcome-screen").classList.remove("active");
+  }, 2600);
+
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 3200);
+}
+
+/* ---------- START ---------- */
+setTimeout(() => {
+  document.getElementById("boot-screen").classList.add("ui-ready");
+  typePhase();
+}, 900);
+</script>
+
+<!-- POST-BOOT WELCOME SCREEN -->
+<div id="welcome-screen">
+  <div class="welcome-content">
+    <img src="../assets/bootlogo.png" alt="OffSecDiary Logo" class="welcome-logo" />
+    <h1>WELCOME TO <span>OFFSECDIARY</span></h1>
+  </div>
+</div>
+
+</body>
+</html>

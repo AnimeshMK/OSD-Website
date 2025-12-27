@@ -1,0 +1,93 @@
+/* Container box */
+.about-terminal {
+  width: 100%;
+  max-width: 420px;
+  height: 500px;
+  padding: 14px;
+  border: 1px solid rgba(255, 60, 60, 0.4);
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Header */
+.terminal-header {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #ff3b3b;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 60, 60, 0.25);
+  margin-bottom: 8px;
+}
+
+/* Scrollable terminal area */
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  white-space: pre;
+  color: #e84a4a;
+  padding-right: 6px;
+}
+
+/* Optional subtle scrollbar */
+.terminal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 80, 80, 0.4);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* subtle scan glow */
+.telemetry-terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 0, 0, 0.04),
+    transparent
+  );
+  animation: scan 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.terminal-body {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 2;
+  color: #e03a3a;
+  white-space: pre;
+}
+
+.terminal-body::after {
+  content: "";
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

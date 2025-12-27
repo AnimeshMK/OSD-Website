@@ -1,0 +1,222 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#050505;
+  color:#e6e6e6;
+  font-family:Inter,system-ui,sans-serif;
+  overflow:hidden;
+}
+
+/* Background depth */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.02), rgba(0,0,0,0.95) 70%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  opacity:.6;
+  pointer-events:none;
+}
+
+/* CRT reverse boot */
+.crt-line{
+  position:fixed;
+  top:50%;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#ff2b2b;
+  box-shadow:0 0 30px rgba(255,43,43,.9);
+  transform:translateY(-50%);
+  animation:crtExpand .9s ease-out forwards;
+  z-index:30;
+}
+
+@keyframes crtExpand{
+  0%{height:2px}
+  60%{height:100vh}
+  100%{height:100vh;opacity:0}
+}
+
+/* CRT overlay */
+.crt-overlay{
+  position:fixed;
+  inset:0;
+  background:repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,.03) 0,
+    rgba(255,255,255,.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity:0;
+  animation:overlayFade 1.2s ease forwards .7s;
+  pointer-events:none;
+  z-index:20;
+}
+
+@keyframes overlayFade{to{opacity:.15}}
+
+#boot-screen{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:opacity 1.2s ease;
+}
+
+#boot-screen.fade-out{opacity:0}
+
+#boot-screen>*:not(.crt-line):not(.crt-overlay){
+  opacity:0;
+  transition:opacity .6s ease;
+}
+
+#boot-screen.ui-ready>*:not(.crt-line):not(.crt-overlay){
+  opacity:1;
+}
+
+/* Core */
+.core{position:relative;width:260px;height:260px;display:flex;align-items:center;justify-content:center}
+
+.hud-ring{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:2px solid rgba(255,43,43,.4);
+  border-radius:50%;
+  animation:rotate 20s linear infinite,breathe 3s ease-in-out infinite;
+}
+
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes breathe{
+  0%,100%{box-shadow:0 0 20px rgba(255,43,43,.3)}
+  50%{box-shadow:0 0 45px rgba(255,43,43,.6)}
+}
+
+.progress-ring{
+    position:absolute;
+    transform:rotate(-90deg)
+}
+
+.progress-ring-circle{
+  fill:none;
+  stroke:#ff2b2b;
+  stroke-width:3;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.core-text{
+  text-align:center;
+  opacity:0;
+  transform:translateY(6px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+#boot-screen.ui-ready .core-text{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.title{
+    color:#ff2b2b;
+    letter-spacing:2px;
+    font-size:14px
+}
+
+.subtitle{font-size:12px;margin-top:6px}
+.percent{font-size:11px;opacity:.8}
+
+.diagnostic{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"JetBrains Mono",monospace;
+  font-size:12px;
+}
+.left{left:60px}
+.right{right:60px;text-align:right}
+.diagnostic span{color:#ff2b2b}
+
+.telemetry{
+  position:absolute;
+  top:40px;
+  left:40px;
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;
+  opacity:.75;
+}
+
+.status-line{
+  position:absolute;
+  bottom:40px;
+  font-family:"JetBrains Mono",monospace;
+  color:rgba(255,43,43,.9);
+  opacity:0;
+  transition:opacity 0.4s ease;
+}
+
+.status-line.visible{
+  opacity:1;
+}
+
+/* ---------------- WELCOME SCREEN ---------------- */
+
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  z-index: 50;
+}
+
+#welcome-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.welcome-content {
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#welcome-screen.active .welcome-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.welcome-logo {
+  width: 260px;
+  max-width: 40vw;
+  margin-bottom: 28px;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 12px rgba(255,43,43,0.25));
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+#welcome-screen h1 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#welcome-screen h1 span {
+  color: #ff2b2b;
+}

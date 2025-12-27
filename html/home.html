@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OffSecDiary — Offensive Security Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <!-- HOME CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/telemetry.css">
+
+  <link rel="stylesheet" href="../css/auth-panel.css">
+</head>
+
+<body>
+
+<!-- ================= COLLAPSIBLE SIDEBAR ================= -->
+<aside class="sidebar collapsed" id="sidebar">
+
+  <div class="sidebar-toggle" id="sidebarToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="home.html" class="active">Home</a>
+    <a href="events.html">Events</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="about.html">About</a>
+    <!-- <a href="achievements.html" >Achievements</a> -->
+  </nav>
+
+  <!--<div class="sidebar-auth">
+    <button id="authOpenBtn" class="auth-btn">
+      SIGN IN / SIGN UP
+    </button>
+  </div> -->
+
+</aside>
+
+<!-- ================= PERMANENT SYSTEM HEADER ================= -->
+<header class="system-header">
+
+  <div class="system-left">
+    <img src="../assets/bootlogo.png" alt="OffSecDiary Logo" class="system-logo">
+    <span class="system-name">OFFSECDIARY</span>
+  </div>
+
+  <div class="system-right">
+    <div class="sys-item">
+      <span class="sys-label">SYSTEM</span>
+      <span class="sys-value online">OPERATIONAL</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">UPTIME</span>
+      <span class="sys-value sys-uptime" id="sys-uptime">00:00:00</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">THREAT</span>
+      <span class="sys-value threat-low" id="sys-threat">LOW</span>
+    </div>
+  </div>
+
+</header>
+
+<!-- ================= INTEL HEADER ================= -->
+<header class="intel-header reveal">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="intel-left">
+    <h1>OFFSECDIARY</h1>
+    <p class="intel-tagline">
+      Hack | Defend | Innovate
+    </p>
+  </div>
+
+  <div class="intel-right">
+    <div class="hero-logo">
+      <img src="../assets/bootlogo_noname.png" alt="OffSecDiary Logo">
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT — SCROLL STACK ================= -->
+<section class="about-stack">
+  <div class="about-stack-container">
+
+  <div class="about-terminal">
+
+    <div class="terminal-header">
+      SYSTEM TELEMETRY
+    </div>
+
+    <pre class="terminal-body" id="telemetryOutput"></pre>
+
+  </div>
+
+<div class="about-stack-content-wrapper">
+
+  <div class="stack-rail">
+    <div class="stack-progress"></div>
+      </div>
+
+      <div class="about-stack-content">
+
+        <!-- ABOUT -->
+        <div class="stack-card active">
+          <h2>ABOUT OFFSECDIARY</h2>
+          <p>
+            OffSecDiary is an offensive security and cybersecurity research initiative focused on
+            real-world attack behavior.
+          </p>
+          <p>
+            We bridge the gap between theoretical learning and practical security by training how
+            adversaries think, operate, and exploit systems.
+          </p>
+          <p>
+            Security here is not taught, it is practiced.
+          </p>
+        </div>
+
+        <!-- APPROACH -->
+        <div class="stack-card">
+          <h2>OUR APPROACH</h2>
+          <p>
+            Our approach is grounded in offensive security and real-world attack behavior.
+          </p>
+          <p>
+            We focus on hands-on execution, adversary emulation, and research-driven learning 
+            not assumptions, checklists, or simulated compliance.
+          </p>
+          <p>
+            Every initiative reflects how threats actually operate, not how they are described in theory.
+          </p>
+        </div>
+
+        <!-- VISION -->
+        <div class="stack-card">
+          <h2>OUR VISION</h2>
+          <p>
+            Our vision is to build a practice-driven offensive security ecosystem that fosters
+            hands-on learning, cutting-edge research, and real operational thinking.
+          </p>
+          <p>
+            We aim to create an environment where experimentation, technical depth, and curiosity
+            are encouraged, enabling individuals to grow from learners into security operators.
+          </p>
+        </div>
+
+        <!-- OBJECTIVE -->
+        <div class="stack-card">
+          <h2>OUR OBJECTIVE</h2>
+          <p>
+            Expose the weaknesses that matter before they are weaponized.
+          </p>
+          <p>
+            Hack. Defend. Innovate.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  © 2025 OffSecDiary — Offensive Security Intelligence
+</footer>
+
+<!-- AUTH MODAL MOUNT POINT (*** Commented out Sign in / Sign up buttons ***)-->
+<!-- <div id="auth-root"></div> -->
+
+<!-- ================= JS (UNCHANGED) ================= -->
+<script>
+/* ================= REVEAL ANIMATION ================= */
+window.addEventListener("load", () => {
+  document.querySelectorAll(".reveal").forEach((el, i) => {
+    setTimeout(() => el.classList.add("active"), i * 180);
+  });
+});
+
+/* ================= STACK SCROLL ================= */
+const cards = document.querySelectorAll(".stack-card");
+const progress = document.querySelector(".stack-progress");
+
+if (cards.length && progress) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+
+      const activeCount = [...cards].filter(c =>
+        c.classList.contains("active")
+      ).length;
+
+      progress.style.height = (activeCount / cards.length) * 100 + "%";
+    },
+    { threshold: 0.4 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+}
+
+/* ================= HERO PARTICLES ================= */
+const canvas = document.getElementById("hero-canvas");
+
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+
+  let w, h;
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  const chars = "0123456789ABCDEF";
+  const particles = [];
+  const PARTICLE_COUNT = 140;
+
+  function createParticle() {
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      speed: 0.3 + Math.random() * 0.8,
+      size: 10 + Math.random() * 10,
+      opacity: 0.15 + Math.random() * 0.4,
+      char: chars[Math.floor(Math.random() * chars.length)]
+    };
+  }
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push(createParticle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    for (const p of particles) {
+      ctx.fillStyle = `rgba(255,43,43,${p.opacity})`;
+      ctx.font = `${p.size}px JetBrains Mono`;
+      ctx.fillText(p.char, p.x, p.y);
+
+      p.y += p.speed;
+
+      if (p.y > h + 20) {
+        p.y = -20;
+        p.x = Math.random() * w;
+        p.speed = 0.3 + Math.random() * 0.8;
+        p.size = 10 + Math.random() * 10;
+        p.opacity = 0.15 + Math.random() * 0.4;
+        p.char = chars[Math.floor(Math.random() * chars.length)];
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+}
+</script>
+
+<!-- <script>
+fetch("../partials/auth-modal.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("auth-root").innerHTML = html;
+  });
+</script> -->
+
+<script src="../js/layout.js"></script>
+<script src="../js/uptime.js"></script>
+<script src="../js/auth-panel.js"></script>
+<script src="../js/telemetry.js"></script> 
+
+</body>
+</html>

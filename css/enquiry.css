@@ -1,0 +1,195 @@
+/* ================= ENQUIRY PAGE ================= */
+
+.enquiry-section {
+  min-height: 100vh;
+  padding: 120px 80px 80px;
+  transition: margin-left 0.35s ease;
+}
+
+.enquiry-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+.enquiry-header h1 {
+  font-size: 42px;
+  letter-spacing: 4px;
+  color: #ff2b2b;
+  margin-bottom: 12px;
+}
+
+.enquiry-header p {
+  max-width: 700px;
+  opacity: 0.75;
+  line-height: 1.7;
+}
+
+/* Card */
+.enquiry-card {
+  margin-top: 60px;
+  padding: 40px;
+  border: 1px solid rgba(255, 43, 43, 0.25);
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 30px rgba(255, 43, 43, 0.15);
+  position: relative;
+}
+
+/* Headings */
+.enquiry-card h2 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #ff2b2b;
+  margin-bottom: 16px;
+}
+
+/* Text */
+.enquiry-text {
+  opacity: 0.85;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Meta info */
+.enquiry-meta {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.enquiry-meta .label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.enquiry-meta .value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: #e6e6e6;
+  word-break: break-word;
+}
+
+/* Note */
+.enquiry-note {
+  font-size: 13px;
+  opacity: 0.6;
+  border-left: 3px solid rgba(255, 43, 43, 0.6);
+  padding-left: 14px;
+}
+
+/* ================= FORM ================= */
+
+.enquiry-form {
+  margin-top: 20px;
+  display: grid;
+  gap: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 43, 43, 0.25);
+  padding: 12px 14px;
+  color: #eaeaea;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff2b2b;
+  box-shadow: 0 0 12px rgba(255, 43, 43, 0.25);
+}
+
+.enquiry-submit {
+  margin-top: 10px;
+  padding: 14px 20px;
+  background: transparent;
+  border: 1px solid #ff2b2b;
+  color: #ff2b2b;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.enquiry-submit:hover {
+  background: #ff2b2b;
+  color: #000;
+}
+
+.success-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: #0b0b0b;
+  border: 1px solid #ff2b2b;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 43, 43, 0.4);
+  max-width: 420px;
+}
+
+.success-box h3 {
+  color: #ff2b2b;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.success-box p {
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.success-box button {
+  background: transparent;
+  border: 1px solid #ff2b2b;
+  color: #ff2b2b;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.success-box button:hover {
+  background: #ff2b2b;
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .enquiry-section {
+    padding: 100px 24px 60px;
+  }
+
+  .enquiry-header h1 {
+    font-size: 32px;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.4;
+  padding: 40px 0;
+}

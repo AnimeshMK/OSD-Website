@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — OffSecDiary</title>
+
+  <!-- Base + Page CSS -->
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+
+  <link rel="stylesheet" href="../css/auth-panel.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar collapsed" id="sidebar">
+
+  <div class="sidebar-toggle" id="sidebarToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="home.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="about.html" class="active">About</a>
+    <!-- <a href="achievements.html" >Achievements</a> -->
+  </nav>
+
+  <!-- <div class="sidebar-auth">
+    <button id="authOpenBtn" class="auth-btn">
+      SIGN IN / SIGN UP
+    </button>
+  </div> -->
+
+</aside>
+
+<!-- ================= SYSTEM HEADER ================= -->
+<header class="system-header">
+
+  <div class="system-left">
+    <img src="../assets/bootlogo.png" class="system-logo" alt="OffSecDiary" />
+    <span class="system-name">OFFSECDIARY</span>
+  </div>
+
+  <div class="system-right">
+    <div class="sys-item">
+      <span class="sys-label">SYSTEM</span>
+      <span class="sys-value online">OPERATIONAL</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">UPTIME</span>
+      <span class="sys-value sys-uptime" id="sys-uptime">00:00:00</span>
+    </div>
+
+    <div class="sys-item">
+      <span class="sys-label">THREAT</span>
+      <span class="sys-value threat-low">LOW</span>
+    </div>
+  </div>
+
+</header>
+
+<!-- ================= ABOUT PAGE ================= -->
+<section class="about-page">
+
+  <div class="about-container">
+
+    <div class="about-header reveal">
+      <h1>ABOUT OFFSECDIARY</h1>
+      <p>
+        OffSecDiary is an initiative focused on offensive security research,
+        adversarial thinking, and real-world attack simulation.
+      </p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>Mission</h2>
+      <p>
+        Our mission is to cultivate a practice-driven environment where security
+        practitioners think like attackers, understand exploitation chains,
+        and build real-world defensive intuition.
+      </p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>Philosophy</h2>
+      <p>
+        Security is not a checklist. It is an adversarial discipline built on
+        curiosity, experimentation, and deep technical understanding.
+        We emphasize offensive research to strengthen defensive capability.
+      </p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>What We Do</h2>
+      <ul class="about-list">
+        <li>Offensive security research & experimentation</li>
+        <li>Adversary emulation and attack modeling</li>
+        <li>Hands-on labs and technical walkthroughs</li>
+        <li>Tooling, automation, and methodology development</li>
+        <li>Security mindset training</li>
+      </ul>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>Core Principle</h2>
+      <p class="about-quote">
+        “You cannot defend what you do not understand.”
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  © 2025 OffSecDiary — Offensive Security Intelligence
+</footer>
+
+<!-- AUTH MODAL MOUNT POINT -->
+<div id="auth-root"></div>
+
+<script>
+fetch("../partials/auth-modal.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("auth-root").innerHTML = html;
+  });
+</script>
+
+<!-- Shared scripts -->
+<script src="../js/layout.js"></script>
+<script src="../js/uptime.js"></script>
+<script src="../js/auth-panel.js"></script>
+
+</body>
+</html>
