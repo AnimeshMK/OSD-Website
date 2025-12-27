@@ -8,8 +8,7 @@
   <!-- Base + Page CSS -->
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/about.css" />
-
-  <link rel="stylesheet" href="../css/auth-panel.css">
+  <link rel="stylesheet" href="../css/auth-panel.css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,14 +35,7 @@
     <a href="events.html">Events</a>
     <a href="enquiry.html">Enquiry</a>
     <a href="about.html" class="active">About</a>
-    <!-- <a href="achievements.html" >Achievements</a> -->
   </nav>
-
-  <!-- <div class="sidebar-auth">
-    <button id="authOpenBtn" class="auth-btn">
-      SIGN IN / SIGN UP
-    </button>
-  </div> -->
 
 </aside>
 
@@ -79,70 +71,106 @@
 
   <div class="about-container">
 
+    <!-- INTRO -->
     <div class="about-header reveal">
       <h1>ABOUT OFFSECDIARY</h1>
       <p>
-        OffSecDiary is an initiative focused on offensive security research,
-        adversarial thinking, and real-world attack simulation.
+        OffSecDiary is a community-driven offensive security research platform
+        focused on real-world cybersecurity, hands-on research, and practical
+        attack methodologies.
       </p>
     </div>
 
+    <!-- WHO WE ARE -->
     <div class="about-block reveal">
-      <h2>Mission</h2>
+      <h2>Who We Are</h2>
       <p>
-        Our mission is to cultivate a practice-driven environment where security
-        practitioners think like attackers, understand exploitation chains,
-        and build real-world defensive intuition.
+        OffSecDiary is built by security practitioners for learners who want to
+        understand how attacks work before learning how to defend against them.
+      </p>
+      <p>
+        We do not train tool users — we develop skilled security operators through
+        ethical, research-driven, and experience-based learning.
       </p>
     </div>
 
-    <div class="about-block reveal">
-      <h2>Philosophy</h2>
-      <p>
-        Security is not a checklist. It is an adversarial discipline built on
-        curiosity, experimentation, and deep technical understanding.
-        We emphasize offensive research to strengthen defensive capability.
-      </p>
-    </div>
-
+    <!-- WHAT WE DO -->
     <div class="about-block reveal">
       <h2>What We Do</h2>
+
       <ul class="about-list">
-        <li>Offensive security research & experimentation</li>
-        <li>Adversary emulation and attack modeling</li>
-        <li>Hands-on labs and technical walkthroughs</li>
-        <li>Tooling, automation, and methodology development</li>
-        <li>Security mindset training</li>
+        <li><strong>CTF Building & Hosting</strong> — Real-world Capture The Flag challenges based on offensive security techniques.</li>
+
+        <li><strong>Offensive Security Training</strong>
+          <ul>
+            <li>1 Month – Fundamentals & methodology</li>
+            <li>3 Months – Practical exploitation & enumeration</li>
+            <li>6 Months – Advanced offensive security & research</li>
+          </ul>
+        </li>
+
+        <li><strong>Research & Development</strong> — Vulnerability research, attack vectors, emerging threat techniques, and security product concepts.</li>
+
+        <li><strong>Free Workshops</strong> — Community-driven sessions focused on practical cybersecurity awareness.</li>
+
+        <li><strong>Penetration Testing & Vulnerability Assessment</strong> — Ethical testing based on realistic attacker behavior.</li>
+
+        <li><strong>Security Tool Development</strong> — Custom tools for automation, research, and offensive testing.</li>
+
+        <li><strong>Expert Sessions</strong> — Industry-led talks covering real attack case studies and advanced concepts.</li>
+
+        <li><strong>Campus Ambassador Program (Shadow Corps)</strong> — Leadership, awareness, and community building inside academic institutions.</li>
       </ul>
     </div>
 
+    <!-- WHO CAN JOIN -->
     <div class="about-block reveal">
-      <h2>Core Principle</h2>
+      <h2>Who Can Join</h2>
+
+      <p>
+        OffSecDiary programs are open to individuals genuinely interested in
+        offensive security and hands-on cybersecurity learning.
+      </p>
+
+      <h3>Eligible Participants</h3>
+      <ul class="about-list">
+        <li>Students seeking practical exposure to offensive security</li>
+        <li>Beginners starting a career in cybersecurity</li>
+        <li>Working professionals looking to upskill</li>
+        <li>Security enthusiasts passionate about research and ethical hacking</li>
+      </ul>
+    </div>
+
+    <!-- ELIGIBILITY -->
+    <div class="about-block reveal">
+      <h2>Eligibility Criteria</h2>
+
+      <ul class="about-list">
+        <li>Basic computer and networking knowledge (recommended)</li>
+        <li>Strong interest in cybersecurity and ethical learning</li>
+        <li>Willingness to learn through hands-on labs and real-world scenarios</li>
+        <li>Program-specific prerequisites for advanced tracks</li>
+      </ul>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <div class="about-block reveal">
+      <h2>Our Philosophy</h2>
       <p class="about-quote">
         “You cannot defend what you do not understand.”
       </p>
     </div>
 
   </div>
-
 </section>
 
 <footer class="footer">
   © 2025 OffSecDiary — Offensive Security Intelligence
 </footer>
 
-<!-- AUTH MODAL MOUNT POINT -->
+<!-- AUTH MODAL ROOT -->
 <div id="auth-root"></div>
 
-<script>
-fetch("../partials/auth-modal.html")
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById("auth-root").innerHTML = html;
-  });
-</script>
-
-<!-- Shared scripts -->
 <script src="../js/layout.js"></script>
 <script src="../js/uptime.js"></script>
 <script src="../js/auth-panel.js"></script>

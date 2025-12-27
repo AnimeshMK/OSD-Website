@@ -174,6 +174,98 @@
   color: #000;
 }
 
+/* ================= FAQ VISUAL UPGRADE ================= */
+
+/* FAQ container refinement */
+.enquiry-card h2 {
+  text-shadow: 0 0 12px rgba(255, 43, 43, 0.35);
+}
+
+/* FAQ block spacing */
+.enquiry-card .enquiry-meta {
+  gap: 26px;
+  margin-top: 25px;
+}
+
+/* Each FAQ item */
+.enquiry-card .enquiry-meta > div {
+  padding: 18px 20px;
+  border-left: 3px solid rgba(255, 43, 43, 0.4);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 43, 43, 0.05),
+    rgba(0, 0, 0, 0)
+  );
+  transition: 0.25s ease;
+}
+
+/* Subtle hover effect */
+.enquiry-card .enquiry-meta > div:hover {
+  border-left-color: #ff2b2b;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 43, 43, 0.12),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Question label */
+.enquiry-card .enquiry-meta .label {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #ff4d4d;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Answer text */
+.enquiry-card .enquiry-meta .value {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #e2e2e2;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Bullet-like spacing inside answers */
+.enquiry-card .enquiry-meta .value br {
+  display: block;
+  margin-top: 6px;
+}
+
+/* FAQ section subtle frame glow */
+.enquiry-card:has(.enquiry-meta) {
+  box-shadow:
+    0 0 25px rgba(255, 43, 43, 0.18),
+    inset 0 0 40px rgba(255, 43, 43, 0.03);
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .enquiry-card .enquiry-meta > div {
+    padding: 16px;
+  }
+
+  .enquiry-card .enquiry-meta .value {
+    font-size: 13px;
+  }
+}
+
+/* Prevent visited links turning purple */
+.enquiry-card a:visited {
+  color: #e6e6e6;
+}
+
+.enquiry-card a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+
+.enquiry-card a:hover {
+  color: #ff2b2b;
+  text-decoration: underline;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {

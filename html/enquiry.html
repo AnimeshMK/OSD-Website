@@ -65,180 +65,215 @@
 </header>
 
 <!-- ================= ENQUIRY PAGE ================= -->
-<section class="enquiry-section">
+<section class="enquiry-section page-content">
 
   <div class="enquiry-container">
 
-    <div class="enquiry-header reveal">
-      <h1>ENQUIRY</h1>
-      <p>
-        Reach out for collaborations, research discussions, training inquiries,
-        or security-related engagements.
-      </p>
-    </div>
+    <div class="enquiry-container">
 
-    <!-- ================= CONTACT CHANNELS CARD ================= -->
-    <div class="enquiry-card reveal">
+  <div class="enquiry-header reveal">
+    <h1>ENQUIRY</h1>
+    <p>
+      Reach out for collaborations, research discussions, training inquiries,
+      or security-related engagements.
+    </p>
+  </div>
 
-      <h2>Contact Channels</h2>
+  <!-- ================= SUBMIT ENQUIRY CARD ================= -->
+  <div class="enquiry-card reveal">
 
-      <p class="enquiry-text">
-        Official communication points for OffSecDiary. Please use the appropriate
-        channel depending on your requirement.
-      </p>
+    <h2>Submit an Enquiry</h2>
 
-      <div class="enquiry-meta">
+    <p class="enquiry-text">
+      Provide your details below. This form will later be connected to secure
+      backend processing. For now, fields are placeholders only.
+    </p>
 
-        <div>
-          <span class="label">WHATSAPP</span>
-          <span class="value">
-            <a href="https://wa.me/918871440062" target="_blank">+91 8871440062</a>,
-            <a href="https://wa.me/919667493039" target="_blank">+91 9667493039</a>
-          </span>
-        </div>
+    <form class="enquiry-form" id="enquiryForm">
 
-        <div>
-          <span class="label">INSTAGRAM</span>
-          <span class="value">
-            <a href="https://www.instagram.com/offsecdiary" target="_blank">
-              https://www.instagram.com/offsecdiary
-            </a>
-          </span>
-        </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
 
-        <div>
-          <span class="label">LINKEDIN</span>
-          <span class="value">
-            <a href="https://www.linkedin.com/company/offsecdiary/" target="_blank">
-              https://www.linkedin.com/company/offsecdiary/
-            </a>
-          </span>
-        </div>
-
-        <div>
-          <span class="label">X (TWITTER)</span>
-          <span class="value">
-            <a href="https://x.com/OffSecDiary" target="_blank">
-              https://x.com/OffSecDiary
-            </a>
-          </span>
-        </div>
-
-        <div>
-          <span class="label">FACEBOOK</span>
-          <span class="value">
-            <a href="https://www.facebook.com/share/1BFWxgT9fg/" target="_blank">
-              https://www.facebook.com/share/1BFWxgT9fg/
-            </a>
-          </span>
-        </div>
-
-        <div>
-          <span class="label">EMAIL</span>
-          <span class="value">
-            <a href="mailto:offsecdiary@gmail.com">
-              offsecdiary@gmail.com
-            </a>
-          </span>
-        </div>
-
-        <div>
-          <span class="label">SUPPORT</span>
-          <span class="value">
-            <a href="mailto:support@offsecdiary.com">
-              support@offsecdiary.com
-            </a>
-          </span>
-        </div>
-
+      <div class="form-group">
+        <label>FULL NAME</label>
+        <input type="text" name="name" placeholder="Enter your full name" required />
       </div>
 
-      <div class="enquiry-note">
-        For official or sensitive matters, prefer email or the enquiry form below.
+      <div class="form-group">
+        <label>EMAIL ADDRESS</label>
+        <input type="email" name="email" placeholder="Enter your email address" required />
+      </div>
+
+      <div class="form-group">
+        <label>SUBJECT</label>
+        <input type="text" name="subject" placeholder="Purpose of your enquiry" required />
+      </div>
+
+      <div class="form-group">
+        <label>MESSAGE / QUERY</label>
+        <textarea name="message" rows="5" placeholder="Describe your query in detail" required></textarea>
+      </div>
+
+      <input type="hidden" name="timestamp" id="timestamp" />
+      <input type="hidden" name="timezone" id="timezone" />
+      <input type="hidden" name="page_url" id="page_url" />
+      <input type="hidden" name="user_agent" id="user_agent" />
+      <input type="hidden" name="referrer" id="referrer" />
+      <input type="hidden" name="ip_address" value="AUTO_FROM_APPS_SCRIPT" />
+      <input type="hidden" name="source" value="enquiry_page" />
+
+      <button type="submit" class="enquiry-submit">
+        Initiate Transmission
+      </button>
+
+    </form>
+  </div>
+
+  <!-- ================= FAQs CARD ================= -->
+  <div class="enquiry-card reveal">
+
+    <h2>Frequently Asked Questions (FAQs)</h2>
+
+    <div class="enquiry-meta">
+
+      <div>
+        <span class="label">1. HOW CAN I JOIN THE OFFSECDIARY COMMUNITY?</span>
+        <span class="value">
+          Follow OffSecDiary on LinkedIn, Instagram, and X (Twitter).  
+          An official WhatsApp Channel will be shared soon.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">2. ARE OFFSECDIARY WORKSHOPS PAID?</span>
+        <span class="value">
+          No. All OffSecDiary workshops are completely free and conducted monthly or bi-monthly.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">3. CAN I JOIN OFFSECDIARY AS AN INTERN?</span>
+        <span class="value">
+          Yes. We regularly onboard interns across multiple domains.
+          Visit the Join Us section for current openings.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">4. WHAT IS THE DURATION OF OFFSECDIARY TRAININGS?</span>
+        <span class="value">
+          Training programs are available for:
+          <br>• 1 Month  
+          <br>• 3 Months  
+          <br>• 6 Months  
+          <br>Details are listed in the Join Us section.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">5. WHO CAN JOIN OFFSECDIARY PROGRAMS?</span>
+        <span class="value">
+          Students, beginners, professionals, and security enthusiasts interested in hands-on cybersecurity learning.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">6. IS PRIOR CYBERSECURITY KNOWLEDGE REQUIRED?</span>
+        <span class="value">
+          No. Some programs are beginner-friendly, while others are advanced.
+          Prerequisites are clearly mentioned.
+        </span>
+      </div>
+
+      <div>
+        <span class="label">7. ARE CERTIFICATES PROVIDED?</span>
+        <span class="value">
+          Yes. Certificates are issued for all programs that we conduct.
+        </span>
       </div>
 
     </div>
 
-    <!-- ================= ENQUIRY FORM CARD ================= -->
-    <div class="enquiry-card reveal">
+  </div>
 
-      <h2>Submit an Enquiry</h2>
+  <!-- ================= CONTACT CHANNELS CARD ================= -->
+  <div class="enquiry-card reveal">
 
-      <p class="enquiry-text">
-        Provide your details below. This form will later be connected to secure
-        backend processing. For now, fields are placeholders only.
-      </p>
+    <h2>Contact Channels</h2>
 
-      <form class="enquiry-form" id="enquiryForm">
+    <p class="enquiry-text">
+      Official communication points for OffSecDiary. Please use the appropriate
+      channel depending on your requirement.
+    </p>
 
-        <!-- ================= USER INPUT FIELDS ================= -->
-        <!-- Honeypot field (bot trap, invisible to users) -->
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+    <div class="enquiry-meta">
 
-        <div class="form-group">
-          <label>FULL NAME</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your full name"
-            required
-          />
-        </div>
+      <div>
+        <span class="label">WHATSAPP</span>
+        <span class="value">
+          <a href="https://wa.me/918871440062" target="_blank">+91 8871440062</a>,
+          <a href="https://wa.me/919667493039" target="_blank">+91 9667493039</a>
+        </span>
+      </div>
 
-        <div class="form-group">
-          <label>EMAIL ADDRESS</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            required
-          />
-        </div>
+      <div>
+        <span class="label">INSTAGRAM</span>
+        <span class="value">
+          <a href="https://www.instagram.com/offsecdiary" target="_blank">
+            https://www.instagram.com/offsecdiary
+          </a>
+        </span>
+      </div>
 
-        <div class="form-group">
-          <label>SUBJECT</label>
-          <input
-            type="text"
-            name="subject"
-            placeholder="Purpose of your enquiry"
-            required
-          />
-        </div>
+      <div>
+        <span class="label">LINKEDIN</span>
+        <span class="value">
+          <a href="https://www.linkedin.com/company/offsecdiary/" target="_blank">
+            https://www.linkedin.com/company/offsecdiary/
+          </a>
+        </span>
+      </div>
 
-        <div class="form-group">
-          <label>MESSAGE / QUERY</label>
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Describe your query in detail"
-            required
-          ></textarea>
-        </div>
+      <div>
+        <span class="label">X (TWITTER)</span>
+        <span class="value">
+          <a href="https://x.com/OffSecDiary" target="_blank">
+            https://x.com/OffSecDiary
+          </a>
+        </span>
+      </div>
 
-        <!-- ================= HIDDEN AUTO-COLLECTED FIELDS ================= -->
+      <div>
+        <span class="label">FACEBOOK</span>
+        <span class="value">
+          <a href="https://www.facebook.com/share/1BFWxgT9fg/" target="_blank">
+            https://www.facebook.com/share/1BFWxgT9fg/
+          </a>
+        </span>
+      </div>
 
-        <!-- Timestamp -->
-        <input type="hidden" name="timestamp" id="timestamp" />
+      <div>
+        <span class="label">EMAIL</span>
+        <span class="value">
+          <a href="mailto:offsecdiary@gmail.com">offsecdiary@gmail.com</a>
+        </span>
+      </div>
 
-        <!-- Client metadata -->
-        <input type="hidden" name="timezone" id="timezone" />
-        <input type="hidden" name="page_url" id="page_url" />
-        <input type="hidden" name="user_agent" id="user_agent" />
-        <input type="hidden" name="referrer" id="referrer" />
-
-        <!-- Filled on backend later -->
-        <input type="hidden" name="ip_address" value="AUTO_FROM_APPS_SCRIPT" />
-
-        <!-- Source identifier -->
-        <input type="hidden" name="source" value="enquiry_page" />
-
-        <button type="submit" class="enquiry-submit">
-          Initiate Transmission
-        </button>
-
-      </form>
+      <div>
+        <span class="label">SUPPORT</span>
+        <span class="value">
+          <a href="mailto:support@offsecdiary.com">support@offsecdiary.com</a>
+        </span>
+      </div>
 
     </div>
+
+    <div class="enquiry-note">
+      For official or sensitive matters, prefer email or the enquiry form above.
+    </div>
+
+  </div>
+
+</div>
 
   </div>
 
@@ -279,14 +314,40 @@ document.getElementById("enquiryForm").addEventListener("submit", function (e) {
     body: new FormData(this)
   })
   .then(() => {
-    alert("Enquiry submitted successfully!");
-    this.reset(); // Clear the form
+    this.reset();
+
+    const popup = document.getElementById("successPopup");
+    popup.style.display = "flex";
   })
   .catch(() => {
     alert("Error submitting enquiry. Please try again.");
   });
 });
+
+// Close success popup
+document.addEventListener("DOMContentLoaded", () => {
+  const closeBtn = document.getElementById("closeSuccess");
+  const popup = document.getElementById("successPopup");
+
+  if (closeBtn && popup) {
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  }
+});
 </script>
+
+<!-- ================= SUCCESS POPUP ================= -->
+<div class="success-popup" id="successPopup">
+  <div class="success-box">
+    <h3>TRANSMISSION SUCCESSFUL</h3>
+    <p>
+      Your enquiry has been securely transmitted.<br>
+      Our team will review and respond shortly.
+    </p>
+    <button id="closeSuccess">ACKNOWLEDGE</button>
+  </div>
+</div>
 
 <script src="../js/layout.js"></script>
 <script src="../js/uptime.js"></script>

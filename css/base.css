@@ -183,6 +183,35 @@ body::before {
   background: rgba(255,43,43,0.12);
 }
 
+/* Shift main content when sidebar opens */
+body.sidebar-open .about-page,
+body.sidebar-open .enquiry-page,
+body.sidebar-open .events-section,
+body.sidebar-open .home-main,
+body.sidebar-open .about-stack,
+body.sidebar-open .events-container {
+  margin-left: 260px;
+  transition: margin-left 0.25s ease;
+}
+
+.about-page,
+.enquiry-page,
+.events-section,
+.about-stack {
+  transition: margin-left 0.25s ease;
+}
+
+/* ================= PAGE SHIFT ON SIDEBAR OPEN ================= */
+
+.page-content {
+  margin-left: 0;
+  transition: margin-left 0.25s ease;
+}
+
+body.sidebar-open .page-content {
+  margin-left: 260px; /* must match sidebar width */
+}
+
 /* =========================================================
    CONTENT OFFSET (DESKTOP)
    ========================================================= */
