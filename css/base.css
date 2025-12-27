@@ -239,19 +239,27 @@ body.sidebar-open .page-content {
 
 @media (max-width: 1024px) {
   .sidebar {
-    transform: translateX(-100%);
+    width: 140px; /* Wider collapsed width on mobile for visibility */
   }
 
   body.sidebar-open .sidebar {
-    transform: translateX(0);
+    width: 220px; /* Expand when open */
   }
 
-  /* Content never shifts on mobile */
+  /* Content stays static on mobile - sidebar overlays */
   .intel-header,
   .about-stack,
   .events-section,
-  .footer {
-    margin-left: 0 !important;
+  .footer,
+  .about-page,
+  .enquiry-page,
+  .achievements-page {
+    margin-left: 50px !important;
+  }
+
+  .sidebar-nav a {
+    font-size: 12px;
+    padding: 8px 12px;
   }
 }
 
@@ -317,4 +325,59 @@ body.sidebar-open .page-content {
 * {
   scrollbar-width: thin;
   scrollbar-color: #ff2b2b #050505;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 768px) {
+  .system-header {
+    padding: 0 16px;
+    height: 50px;
+  }
+
+  .system-left {
+    gap: 8px;
+  }
+
+  .system-logo {
+    height: 24px;
+  }
+
+  .system-name {
+    font-size: 12px;
+  }
+
+  .system-right {
+    gap: 16px;
+  }
+
+  .sys-item {
+    font-size: 9px;
+  }
+
+  .sys-value {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .system-header {
+    padding: 0 12px;
+  }
+
+  .system-right {
+    gap: 12px;
+  }
+
+  .sys-item {
+    font-size: 8px;
+  }
+
+  .sys-label {
+    font-size: 9px;
+  }
+
+  .sys-value {
+    font-size: 10px;
+  }
 }

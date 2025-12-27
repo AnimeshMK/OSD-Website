@@ -139,6 +139,28 @@
   }
 }
 
+@media (max-width: 480px) {
+  .events-section {
+    padding: 90px 16px;
+  }
+
+  .events-header h1 {
+    font-size: 28px;
+  }
+
+  .event-card {
+    padding: 20px;
+  }
+
+  .event-card h3 {
+    font-size: 18px;
+  }
+
+  .event-card p {
+    font-size: 14px;
+  }
+}
+
 /* ================= FILTER BAR ================= */
 .events-filters {
   display: flex;

@@ -220,3 +220,111 @@ body::before{
 #welcome-screen h1 span {
   color: #ff2b2b;
 }
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 768px) {
+  .core {
+    width: 200px;
+    height: 200px;
+  }
+
+  .progress-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .progress-ring-circle {
+    r: 95;
+    cx: 100;
+    cy: 100;
+  }
+
+  .hud-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .diagnostic.left {
+    left: 20px;
+  }
+
+  .diagnostic.right {
+    right: 20px;
+  }
+
+  .telemetry {
+    top: 20px;
+    left: 20px;
+    font-size: 10px;
+  }
+
+  .status-line {
+    bottom: 20px;
+    font-size: 11px;
+  }
+
+  .welcome-logo {
+    width: 200px;
+    max-width: 60vw;
+  }
+
+  #welcome-screen h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .core {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progress-ring {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progress-ring-circle {
+    r: 70;
+    cx: 75;
+    cy: 75;
+  }
+
+  .hud-ring {
+    width: 150px;
+    height: 150px;
+  }
+
+  .diagnostic {
+    font-size: 10px;
+  }
+
+  .diagnostic.left {
+    left: 10px;
+  }
+
+  .diagnostic.right {
+    right: 10px;
+  }
+
+  .telemetry {
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+  }
+
+  .status-line {
+    bottom: 10px;
+    font-size: 10px;
+  }
+
+  .welcome-logo {
+    width: 150px;
+    max-width: 70vw;
+  }
+
+  #welcome-screen h1 {
+    font-size: 16px;
+  }
+}

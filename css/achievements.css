@@ -175,6 +175,28 @@
   }
 }
 
+@media (max-width: 480px) {
+  .achievements-page {
+    padding: 80px 16px 40px;
+  }
+
+  .achievements-header h1 {
+    font-size: 28px;
+  }
+
+  .achievement-card {
+    padding: 20px;
+  }
+
+  .achievement-card h3 {
+    font-size: 15px;
+  }
+
+  .badge-icon {
+    font-size: 28px;
+  }
+}
+
 /* ================= FOOTER ================= */
 
 .footer {

@@ -269,12 +269,46 @@
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-  .enquiry-section {
+  .achievements-page {
     padding: 100px 24px 60px;
   }
 
-  .enquiry-header h1 {
+  .achievements-header h1 {
     font-size: 32px;
+  }
+
+  .achievement-card {
+    padding: 24px;
+  }
+
+  .achievement-card h3 {
+    font-size: 16px;
+  }
+
+  .badge-icon {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-page {
+    padding: 80px 16px 40px;
+  }
+
+  .achievements-header h1 {
+    font-size: 28px;
+  }
+
+  .achievement-card {
+    padding: 20px;
+  }
+
+  .achievement-card h3 {
+    font-size: 15px;
+  }
+
+  .badge-icon {
+    font-size: 28px;
   }
 }
 

@@ -424,3 +424,118 @@ body::before {
   color: #ff2b2b;
   opacity: 0.9;
 }
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1024px) {
+  .intel-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 100px 60px 60px;
+    text-align: center;
+  }
+
+  .intel-left h1 {
+    font-size: 48px;
+  }
+
+  .hero-logo img {
+    width: 280px;
+  }
+
+  .about-stack {
+    padding: 100px 60px;
+  }
+
+  .about-stack-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .about-stack-content-wrapper {
+    gap: 30px;
+  }
+
+  .stack-card h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intel-header {
+    padding: 80px 40px 40px;
+    min-height: auto;
+  }
+
+  .intel-left h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .intel-tagline {
+    font-size: 16px;
+  }
+
+  .hero-logo img {
+    width: 240px;
+  }
+
+  .about-stack {
+    padding: 80px 40px;
+  }
+
+  .about-stack-content {
+    gap: 80px;
+  }
+
+  .stack-card h2 {
+    font-size: 22px;
+  }
+
+  .stack-card p {
+    font-size: 15px;
+  }
+
+  .about-terminal {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .intel-header {
+    padding: 60px 20px 30px;
+  }
+
+  .intel-left h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .intel-tagline {
+    font-size: 14px;
+  }
+
+  .hero-logo img {
+    width: 180px;
+  }
+
+  .about-stack {
+    padding: 60px 20px;
+  }
+
+  .about-stack-content {
+    gap: 60px;
+  }
+
+  .stack-card h2 {
+    font-size: 20px;
+  }
+
+  .stack-card p {
+    font-size: 14px;
+  }
+
+  .terminal-body {
+    font-size: 11px;
+  }
+}
