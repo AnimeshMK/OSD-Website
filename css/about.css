@@ -176,6 +176,213 @@
   transform: translateY(0);
 }
 
+/* ================= TEAM SECTION (PROFESSIONAL UPGRADE) ================= */
+
+.team-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+/* Card wrapper */
+.team-card {
+  perspective: 1400px;
+}
+
+/* Inner flipping container */
+.team-inner {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Flip only when active (click) */
+.team-card.active .team-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared face */
+.team-front,
+.team-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 26px;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 43, 43, 0.35);
+  background:
+    linear-gradient(180deg, rgba(255, 0, 0, 0.06), rgba(0, 0, 0, 0.85));
+  box-shadow:
+    0 0 25px rgba(255, 43, 43, 0.18),
+    inset 0 0 20px rgba(255, 43, 43, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Accent strip */
+.team-front::before,
+.team-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #ff2b2b, transparent);
+  opacity: 0.8;
+}
+
+/* FRONT FACE */
+.team-front h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: #ff3b3b;
+  margin-bottom: 10px;
+}
+
+.team-role {
+  font-size: 13px;
+  color: #d5d5d5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* subtle indicator */
+.team-front::after {
+  content: "CLICK TO VIEW";
+  margin-top: 22px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 60, 60, 0.6);
+}
+
+/* BACK FACE */
+.team-back {
+  transform: rotateY(180deg);
+}
+
+.team-back h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ff4d4d;
+  letter-spacing: 0.8px;
+}
+
+.team-back p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e1e1e1;
+  margin-bottom: 6px;
+}
+
+/* Hover polish (no flip) */
+.team-card:hover .team-front,
+.team-card:hover .team-back {
+  box-shadow:
+    0 0 35px rgba(255, 43, 43, 0.35),
+    inset 0 0 25px rgba(255, 43, 43, 0.08);
+}
+
+/* Mobile tuning */
+@media (max-width: 600px) {
+  .team-inner {
+    height: 280px;
+  }
+
+  .team-front h3 {
+    font-size: 17px;
+  }
+
+  .team-back h4 {
+    font-size: 15px;
+  }
+}
+
+/* ================= TEAM CARD – BACK SIDE ENHANCEMENT ================= */
+
+.team-back {
+  background:
+    radial-gradient(circle at top, rgba(255, 60, 60, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(20, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+  border: 1px solid rgba(255, 60, 60, 0.45);
+  box-shadow:
+    0 0 35px rgba(255, 60, 60, 0.25),
+    inset 0 0 30px rgba(255, 60, 60, 0.12);
+  padding: 30px 26px;
+  text-align: left;
+}
+
+/* Name (headline) */
+.team-back h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff3b3b;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.team-back h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2b2b, transparent);
+}
+
+/* Info rows */
+.team-back p {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #e6e6e6;
+}
+
+/* Labels (Email / Skills) */
+.team-back p strong {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #ff6a6a;
+  text-transform: uppercase;
+}
+
+/* Email emphasis */
+.team-back p:first-of-type {
+  background: rgba(255, 60, 60, 0.06);
+  border-left: 3px solid #ff3b3b;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+/* Skills pill style */
+.team-back p:last-of-type {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 60, 60, 0.35);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+/* subtle hover depth even when flipped */
+.team-card.active .team-back {
+  box-shadow:
+    0 0 45px rgba(255, 60, 60, 0.4),
+    inset 0 0 35px rgba(255, 60, 60, 0.15);
+}
+
 /* -------------------------------
    RESPONSIVE
 -------------------------------- */
